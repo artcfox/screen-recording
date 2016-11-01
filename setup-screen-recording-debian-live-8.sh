@@ -7,14 +7,14 @@
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
-# 
+#
 # 1. Redistributions of source code must retain the above copyright
 # notice, this list of conditions and the following disclaimer.
-# 
+#
 # 2. Redistributions in binary form must reproduce the above copyright
 # notice, this list of conditions and the following disclaimer in the
 # documentation and/or other materials provided with the distribution.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY MATTHEW T. PANDINA "AS IS" AND ANY
 # EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 # IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
@@ -159,7 +159,7 @@ fi
 # The screen resolution might change, so don't run xrandr now
 cat <<'EOF' >> ${start_script}
 -video_size $(xrandr | grep '*' | tr -s ' ' | cut -d ' ' -f 2) \
--framerate 60 \
+-r 60 \
 -f x11grab \
 -i :0.0 \
 EOF
@@ -211,7 +211,7 @@ then
 	printf "."
     done
     echo ""
-    
+
     # I'm sorry, this is the only way I know how to get GNOME to recognize that we added keyboard shortcuts:
     screen -d -m gnome-shell --replace
     # If anyone finds a better way, please let me know!
